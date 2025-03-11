@@ -8,6 +8,7 @@ class BackTester:
     - start_date: start date for data
     - end_ate: end date for data (optional default today)
     - portfolio: pd.DataFrame
+    - stoploss: float
     - **kwargs
 
 
@@ -18,7 +19,7 @@ class BackTester:
   def x(self)
 
 
-  * will be called in trade when looking to for long opportunities
+  * will be called in trade when looking for long opportunities
   returns: bool
   def enter(data) -> bool
 
@@ -31,3 +32,7 @@ class BackTester:
   def trade(data, min_hold_dur: int):
     - executes enter and exit all stocks
     - updates portfolio values based on trade opportunities
+
+
+  * for each interval in the range, call x()
+  def backtest(self, start_date, end_date):
